@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ariq's Resume</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="riqonerd.jpg" type="image/jpeg"/>
+</head>
+<div id="gif-background"></div>
+<body>
+  <div class="content-wrapper">
+
+    <!-- Header -->
+    <div id="header" style="background-image:url('riqocar.jpg');">
+      <h1>Bonjour mon ami</h1>
+      <p><em>Welcome to my Page</em></p>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="hobbies.html">Hobbies and Interests</a></li>
+        <li><a href="education.html">Education</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 40px; margin: 100px auto; max-width: 1000px; flex-wrap: wrap;">
+
+      <!-- Slideshow -->
+      <div style="flex: 1; min-width: 300px; border: 5px solid black; border-radius: 10px; height: 400px; max-width: 400px; position: relative; overflow: hidden;">
+        <div id="slideshow">
+          <img src="riqonerd.jpg" class="slide-img">
+          <img src="riqoklia.jpg" class="slide-img">
+          <img src="riqomac.jpg" class="slide-img">
+        </div>
+        <button onclick="plusSlides(-1)" class="slide-btn left">&#10094;</button>
+        <button onclick="plusSlides(1)" class="slide-btn right">&#10095;</button>
+      </div>
+
+      <!-- About Me -->
+      <div id="aboutme" style="flex: 1; min-width: 300px;">
+        <h1>About Me</h1>
+        <p>Hello everynyann:3 My name is Ahmad Ariq Musa, and I'm from the big city that is called Setia Alam. I'm a jack of all trades, which means that I like to do a little bit of everything. I really enjoy learning new things and acquiring skills along the way.</p>
+      </div>
+
+    </div>
+
+  </div> <!-- end .content-wrapper -->
+
+  <!-- Footer -->
+  <footer>
+    <h1 style="margin-bottom: 5px; font-size: 24px;">Contact Me</h1>
+    <div class="contact-buttons">
+      <a href="https://www.instagram.com/ariqtrash/" target="_blank" class="fa fa-instagram"></a>
+      <a href="https://open.spotify.com/user/9u83k43i6oet7kggl16jztik8" target="_blank" class="fa fa-spotify"></a>
+      <a href="mailto:ariq.muz@gmail.com" class="fa fa-google"></a>
+    </div>
+    <p style="margin-top: 10px; font-size: 15px;">pls follow me</p>
+  </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    let slides = document.getElementsByClassName("slide-img");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+      slides[slideIndex].style.opacity = 1;
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    showSlides();
+    let slideInterval = setInterval(showSlides, 4000);
+
+    function plusSlides(n) {
+      clearInterval(slideInterval);
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      slides[slideIndex].style.opacity = 1;
+      slideInterval = setInterval(showSlides, 4000);
+    }
+  </script>
+</body>
+</html>
